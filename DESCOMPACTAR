@@ -1,0 +1,15 @@
+import zipfile
+import os
+import pandas as pd
+
+# Caminhos
+zip_path = '/mnt/data/202401_NFs.zip'
+extract_path = '/mnt/data/extracted_files/'
+
+# Extrair o arquivo
+with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+    zip_ref.extractall(extract_path)
+
+# Listar arquivos extraídos
+extracted_files = os.listdir(extract_path)
+extracted_files
